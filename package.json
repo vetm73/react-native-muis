@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node_modules/react-native/packager/packager.sh",
-    "test": "jest"
+    "test": "jest",
+    "emulator-android": "cd %userprofile%\\AppData\\Local\\Android\\sdk\\emulator && emulator -avd Nexus_5X_API_27_x86"
   },
   "dependencies": {
     "moment": "^2.22.1",
