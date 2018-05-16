@@ -1,8 +1,9 @@
 package com.rnij;
 
-import com.facebook.react.ReactActivity;
+//import com.facebook.react.ReactActivity;
+import com.reactnativenavigation.controllers.SplashActivity;
 
-public class MainActivity extends ReactActivity {
+public class MainActivity extends SplashActivity /*ReactActivity*/ {
 
     /**
      * Returns the name of the main component registered from JavaScript.
