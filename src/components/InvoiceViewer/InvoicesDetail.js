@@ -5,7 +5,7 @@ import styles from './styles';
 
 export default class InvoicesDetail extends Component {
   render() {
-    const { item } = this.props.navigation.state.params;
+    const { item } = this.props;
     return (
             <Card>
                 <Text style={ styles.Label }>Factuurnummer:</Text>

@@ -7,9 +7,14 @@ export default class InvoiceList extends PureComponent {
     _keyExtractor = item => item.id;
 
     _onPressItem = ( id: string ) => {
-        const { navigate } = this.props;
+        const { navigator } = this.props;
         const { data } = this.props;
-        navigate( 'InvoicesDetail', { item: data.filter( item => item.id === id ).shift() } );
+        const item = data.filter( item => item.id === id ).shift();
+        navigator.push( {
+            screen: 'muis.InvoicesDetailScreen',
+            passProps: { item: item },
+            title: `Factuur ${ item.id }`
+        } );
     };
 
     _renderItem = ( { item } ) => (
