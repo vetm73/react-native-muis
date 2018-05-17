@@ -1,6 +1,5 @@
-import * as config from '../../config';
-import * as types from '../../actionTypes';
-import Invoice from '../../domain/Invoice';
+import * as config from '../../../config';
+import * as types from '../../../actionTypes';
 
 const start = () => {
     return {

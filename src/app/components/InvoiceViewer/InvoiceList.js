@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { FlatList } from 'react-native';
 import InvoiceListItem from './InvoiceListItem';
-import * as config from '../../config';
+import * as config from '../../../config';
 
 export default class InvoiceList extends PureComponent {
     _keyExtractor = item => item.id;
