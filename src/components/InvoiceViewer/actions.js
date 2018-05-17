@@ -34,6 +34,7 @@ const getData = ( endpoint: string ) => {
         return fetch( config.API_URL + endpoint.toUpperCase() )
             .then( result => {
                 if ( result.ok ) {
+                    console.log( 'result', result )
                     return result.json();
                 } else {
                     dispatch( failure( result.statusText ) );

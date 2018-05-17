@@ -25,7 +25,7 @@ class Invoices extends Component {
   }
 
   render() {
-    const { invoices } = this.props;
+    const { invoices, hasError } = this.props;
     const { selectedIndex } = this.state;
     const { navigator } = this.props;
     return (

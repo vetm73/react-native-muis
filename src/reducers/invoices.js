@@ -10,6 +10,12 @@ const initialState = {
 
 export default function configuration( state = initialState, action = {} ) {
     switch ( action.type ) {
+        case types.FETCH_INVOICES_DATA_REQUEST:
+            console.log( types.FETCH_INVOICES_DATA_REQUEST )
+
+            return {
+                ...state,
+            }
         case types.FETCH_INVOICES_DATA_SUCCESS:
             console.log( types.FETCH_INVOICES_DATA_SUCCESS )
             const data = action.payload
