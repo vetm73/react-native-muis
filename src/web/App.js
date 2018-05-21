@@ -1,8 +1,14 @@
-import React from 'react'
-import Test from './components/Test';
+import React from 'react';
+import { Provider } from 'react-redux';
+import Routing from './components/Routing';
+import configureStore from '../store';
+
+const store = configureStore();
 
 const App = () => {
-    return <Test />
+    return <Provider store={ store }>
+        <Routing />
+    </Provider>
 }
 
 export default App;

@@ -27,13 +27,18 @@ const failure = ( error ) => {
     }
 }
 
-const getData = ( endpoint: string ) => {
+function getPathFromUrl( url ) {
+    const parser = new URL( url );
+    return parser.pathname + parser.search;
+}
+
+const getData = ( endpoint: string, proxy: string ) => {
+    const apiUrl = proxy ? proxy + getPathFromUrl( config.API_URL ) : config.API_URL;
     return ( dispatch, getState ) => {
         dispatch( start() );
-        return fetch( config.API_URL + endpoint.toUpperCase() )
+        return fetch( apiUrl + endpoint.toUpperCase() )
             .then( result => {
                 if ( result.ok ) {
-                    console.log( 'result', result )
                     return result.json();
                 } else {
                     dispatch( failure( result.statusText ) );

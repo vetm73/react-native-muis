@@ -1,6 +1,29 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require( 'path' );
+
 module.exports = {
-    entry: "./src/web/index.js",
+    // entry: "./src/web/index.js",
+    entry: [
+        'webpack-dev-server/client?http://localhost:8080/',
+        // 'webpack/hot/only-dev-server',
+        path.join(__dirname, 'src/web/index.js')
+    ],
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js',
+        publicPath: '/'
+    },
+    devServer: {
+        historyApiFallback: true,
+        proxy: {
+            "/api": {
+                target: "https://cloudswitch.imuisonline.com",
+                pathRewrite: {"^/api" : ""},
+                // logLevel: 'debug',
+                changeOrigin: true,
+            },
+        }
+    },
     module: {
         rules: [
             {
@@ -27,7 +50,7 @@ module.exports = {
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/web/index.html",
-            filename: "./index.html"
+            // filename: "./index.html"
         })
     ]
 };
