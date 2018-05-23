@@ -2,6 +2,7 @@ import React from 'react';
 import Invoice from '../../../domain/Invoice';
 import { Card, CardBody, CardHeader, CardSubtitle, CardTitle, Table } from 'reactstrap';
 import styles from './InvoiceDetail.css';
+import { FormattedNumber } from 'react-intl';
 
 const InvoiceDetail = ( props ) => {
     const { invoice } = props;
@@ -18,7 +19,7 @@ const InvoiceDetail = ( props ) => {
                         <tbody>
                             <tr>
                                 <td>Bedrag:</td>
-                                <td>&euro; { invoice.invoice_amount }</td>
+                                <td><FormattedNumber value={ invoice.invoice_amount } currency='EUR' style='currency' /></td>
                             </tr>
                             <tr>
                                 <td>Adres:</td>
