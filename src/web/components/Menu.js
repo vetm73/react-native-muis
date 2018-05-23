@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, NavLink as Link } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import styles from './Menu.css';
 
@@ -21,4 +21,4 @@ const Menu = ( props ) => {
     )
 }
 
-export default withRouter( Menu );
+export default Menu;
