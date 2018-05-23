@@ -1,0 +1,12 @@
+h5 {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.link:hover {
+    text-decoration: none;
+}

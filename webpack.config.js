@@ -43,7 +43,13 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [ 'style-loader', 'css-loader' ]
+                loaders: ['style-loader', 'css-loader?modules&localIdentName=[name]-[local]--[hash:base64:5]', 'postcss-loader'],
+                include: [path.resolve(__dirname, "src/web/components")]
+            },
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ],
+                exclude: [path.resolve(__dirname, "src/web/components")]
             }
         ]
     },

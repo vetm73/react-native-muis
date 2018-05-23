@@ -18,11 +18,10 @@ class Invoices extends Component {
 
         return (
             <Fragment>
-                <div>Invoices</div>
                 <Container>
                     <Row>
                         <Col>
-                            <FilterButton label='Openstaand' filterValue={ 0 } onClick={ filter } />
+                            <FilterButton label='Openstaand' filterValue={ 0 } onClick={ filter } />{ ' ' }
                             <FilterButton label='Alle' filterValue={ 1 } onClick={ filter } />
                             <InvoiceList invoices={ invoices } />
                         </Col>

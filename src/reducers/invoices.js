@@ -33,7 +33,7 @@ export default function configuration( state = initialState, action = {} ) {
                 errorMessage: action.payload,
             }
         case types.FILTER_INVOICES:
-            console.log( types.FILTER_INVOICES )
+            console.log( types.FILTER_INVOICES, action.payload );
             return {
                 ...state,
                 filteredData: action.payload === 1 ? state.data : state.data.filter( invoice => invoice.invoice_paid ),
