@@ -4,6 +4,7 @@ import Routing from './components/Routing';
 import configureStore from '../store';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import nl from 'react-intl/locale-data/nl';
+
 addLocaleData( nl );
 
 const store = configureStore();

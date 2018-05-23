@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 import Invoices from './InvoiceViewer/Invoices';
 import Menu from './Menu';
 import Home from './Home';
