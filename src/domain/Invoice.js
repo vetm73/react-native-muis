@@ -1,5 +1,14 @@
 import Moment from 'moment';
 
+type Data = {
+    'FACT': string,
+    'SALDO': string,
+    'VOLDAAN': string
+}
+
+export type InvoiceType = {
+}
+
 export default class Invoice {
     static INVOICE_ID = 'FACT';
     static INVOICE_BALANCE = 'SALDO';
@@ -19,7 +28,7 @@ export default class Invoice {
     static DEBTOR_INVOICE_ID = 'DEBORDER';
     static DEBTOR_INVOICE_NAME = 'DEBORDER_NAAM';
 
-    constructor( data ) {
+    constructor( data: Data ) {
         this._id = data[ Invoice.INVOICE_ID ] || null;
         this._invoice_balance = data[ Invoice.INVOICE_BALANCE ] && parseFloat( data[ Invoice.INVOICE_BALANCE ] ) || 0.00;
         this._invoice_paid = data[ Invoice.INVOICE_PAID ] && data[ Invoice.INVOICE_PAID ] !== 'N' || false;

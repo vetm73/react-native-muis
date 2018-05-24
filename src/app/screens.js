@@ -1,7 +1,8 @@
 import { Navigation } from 'react-native-navigation';
 
 import InvoicesScreen from './components/InvoiceViewer/Invoices';
-import InvoiceDetailScreen from './components/InvoiceViewer/InvoicesDetail';
+// import InvoiceDetailScreen from './components/InvoiceViewer/InvoicesDetail';
+import InvoiceDetailScreen from './components/InvoiceViewer/IntlWrapper';
 import SplashScreen from './components/Misc/Splash';
 
 export function registerScreens( store, Provider ) {

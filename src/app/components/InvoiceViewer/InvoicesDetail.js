@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text } from 'react-native';
 import { Card, Divider } from 'react-native-elements';
 import styles from './styles';
+import { FormattedNumber } from 'react-intl';
 
 export default class InvoicesDetail extends Component {
   render() {
@@ -13,7 +14,11 @@ export default class InvoicesDetail extends Component {
 
                 <Divider style={ styles.DividerMargin } />
                 <Text style={ styles.Label }>Bedrag:</Text>
-                <Text style={ styles.InvoicesDetailInput }>&euro; { item.invoice_amount }</Text>
+                <Text style={ styles.InvoicesDetailInput }>
+                    <FormattedNumber value={ item.invoice_amount } currency='EUR' style='currency' >
+                        { value => <Text>{ value }</Text> }
+                    </FormattedNumber>
+                </Text>
                 <Text style={ styles.Label }>Datum::</Text>
                 <Text style={ styles.InvoicesDetailInput }>{ item.invoice_date.format('DD-MM-YYYY') }</Text>
 

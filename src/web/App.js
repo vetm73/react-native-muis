@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Provider } from 'react-redux';
 import Routing from './components/Routing';
@@ -9,7 +10,10 @@ addLocaleData( nl );
 
 const store = configureStore();
 
-const App = ( props ) => {
+type Props = {
+}
+
+const App = ( props: Props ) => {
     return <Provider store={ store }>
         <IntlProvider locale='nl' >
             <Routing />

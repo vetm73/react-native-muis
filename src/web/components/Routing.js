@@ -1,10 +1,13 @@
+// @flow
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 import Invoices from './InvoiceViewer/Invoices';
 import Menu from './Menu';
 import Home from './Home';
 
-const Routing = ( props ) => {
+type Props = {}
+
+const Routing = ( props: Props ) => {
     return (
         <Router>
             <Fragment>

@@ -6,7 +6,14 @@ import InvoiceDetail from './InvoiceDetail';
 import FilterButton from './FilterButton';
 import { Col, Container, Row } from 'reactstrap';
 
-class Invoices extends Component {
+type Props = {
+    getData: Function,
+    invoices: Array<Invoices>,
+    filter: number,
+    match: Object
+}
+
+class Invoices extends Component<Props> {
     componentWillMount() {
         this.props.getData();
     }
