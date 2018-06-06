@@ -7,7 +7,8 @@
     "test": "jest",
     "emulator-android": "cd %userprofile%\\AppData\\Local\\Android\\sdk\\emulator && emulator -avd Nexus_5X_API_27_x86",
     "build-web": "webpack --mode production",
-    "start-web": "webpack-dev-server --mode development"
+    "start-web": "webpack-dev-server --mode development --host 0.0.0.0 --port 8080",
+    "debug-web": "node --inspect node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development --host 0.0.0.0 --port 8080"
   },
   "dependencies": {
     "babel-core": "^6.26.3",

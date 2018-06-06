@@ -36,7 +36,19 @@ const getData = ( endpoint: string, proxy: string ) => {
     const apiUrl = proxy ? proxy + getPathFromUrl( config.API_URL ) : config.API_URL;
     return ( dispatch, getState ) => {
         dispatch( start() );
-        return fetch( apiUrl + endpoint.toUpperCase() )
+        const configuration = {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: {
+                'content-type': 'application/json'
+            },
+            redirect: 'follow',
+            body: JSON.stringify( {
+                ACTIE: "GETFACT",
+                PARTNERKEY: "fafjkfewqwiqiruwufqwefurkjkkleiojhrjioejothjhfjka"
+            } )
+        }
+        return fetch( apiUrl + endpoint.toUpperCase(), configuration )
             .then( result => {
                 if ( result.ok ) {
                     return result.json();

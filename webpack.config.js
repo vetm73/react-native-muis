@@ -4,7 +4,7 @@ const path = require( 'path' );
 module.exports = {
     // entry: "./src/web/index.js",
     entry: [
-        'webpack-dev-server/client?http://localhost:8080/',
+        'webpack-dev-server/client?http://0.0.0.0:8080/',
         // 'webpack/hot/only-dev-server',
         path.join(__dirname, 'src/web/index.js')
     ],
@@ -14,6 +14,7 @@ module.exports = {
         publicPath: '/'
     },
     devServer: {
+        disableHostCheck: true,
         historyApiFallback: true,
         proxy: {
             "/api": {
